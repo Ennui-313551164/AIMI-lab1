@@ -1,0 +1,10 @@
+*.txt
+!requirements.txt
+
+chest_xray/
+venv/
+__pycache__/
+
+result/
+!result/plot/
+!result/*.pt
