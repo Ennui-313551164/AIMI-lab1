@@ -9,6 +9,7 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader
+from torch.optim import lr_scheduler
 
 from torchvision import transforms
 import torchvision.models as models
@@ -263,7 +264,7 @@ if __name__ == '__main__':
 
     #? Set up logging to file
     logging.basicConfig(
-        filename='train_log.txt',
+        filename=f'train_log_{model_name}.txt',
         # filemode='w',  # overwrite the log file each time
         level=logging.INFO,
         format='%(asctime)s - %(message)s',
@@ -320,6 +321,7 @@ if __name__ == '__main__':
     criterion = criterion.to(device)
     optimizer = optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.wd)
 
+    scheduler = lr_scheduler.ExponentialLR(optimizer, gamma=0.9)
 
     # training
     train_acc_list, val_acc_list, f1_score_list, _ = train(device, train_loader, val_loader, model, criterion, optimizer, model_name)
