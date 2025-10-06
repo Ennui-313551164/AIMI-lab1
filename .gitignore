@@ -6,5 +6,4 @@ venv/
 __pycache__/
 
 result/
-!result/plot/
-!result/*.pt
+
