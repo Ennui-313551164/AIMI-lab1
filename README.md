@@ -52,7 +52,7 @@ python lab1.py --model ResNet18
 
 - `--model`: 選擇模型 (ResNet18, ResNet50, ResNet101)
 - `--num_epochs`: 訓練週期數 (預設: 20)
-- `--batch_size`: 批次大小 (預設: 48)
+- `--batch_size`: 批次大小 (預設: 64)
 - `--lr`: 學習率 (預設: 1e-5)
 - `--resize`: 影像大小 (預設: 224)
 - `--degree`: 旋轉角度 (預設: 90)
